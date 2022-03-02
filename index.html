@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--Always add HTML Element (can be omitted) otherwise DOM & XML Software can crash-->
+<!--Add the Language Attribut tpß-->
+
+<head>
+    <!--It is recommended to always add the Head Element (otherwise everything before the Body Element gets added to a default Head Element)-->
+    <!--Meta Elements specify the set of characters, the page description, keywords, the author and viewport settings-->
+    <!--Best to keep the Slash for Closing empty Elements (Meta, BR, HR etc.) because -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description"
+        content="This website and index.html is a cheatsheet to learn and review all things about HTML, CSS & Javascript">
+    <meta name="author" content="Lukas Maximilian Kodalle">
+    <meta http-equiv="refresh" content="60">
+    <!--Refreshes the document every 60 seconds (change into whatever)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Scales website accordingly to look good on every device-->
+    <base href="index.html" target="">
+    <!--Base Element specifies the base URL + target (_blank etc.) for all relative URLs in the page-->
+    <title>My JS Learning Journey</title>
+    <!--REQUIRED! Title Element needed for SEO (Search Engine Optimization)-->
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="/My_JS_Learning/Build/learning.js"></script>
+    <!--External CSS and JS File-->
+    <link rel="icon" href="example/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!--Always add Body Element (can be omitted) otherwise older Browsers can produce Errors-->
+    <!--
+      Normally: Do NOT use Blank Lines, Spaces or Indentations for no Reason
+      For Readability: Add Blank Lines to seperate large or logical Code Blocks
+      Do NOT use the TAB-Key, only add two Spaces of Indentation for Lists and Tables
+      (This Code follows a different Format using SHIFT+ALT+F)
+    -->
+
+    <h1 id="start">My JS Coding</h1>
+    <ul id="navigation">
+        <li><a href="#start">Start</a></li>
+        <li><a href="#bookmark">Bookmark</a></li>
+        <li><a href="#tables">Tables</a></li>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#class">Classes</a></li>
+        <li><a href="#iframe">IFrame</a></li>
+        <li><a href="#layout">Layout</a></li>
+        <li><a href="#code">Code</a></li>
+        <li><a href="#semantic">Semantics</a></li>
+    </ul>
+
+    <a href="#bookmark">Jump to Bookmark</a>
+    <a href="https://www.w3schools.com/" target="_self">Link to W3Schools</a><br>
+    <!--_blank = new window/tab | _parent = opens in parent frame | _top = opens in full body of window-->
+
+    <img src="" alt="Image" style="width:100px; height:100px" usemap="#map">
+    <!--Always add Width and Height to reduce errors-->
+    <!--Best practice is usually to use relative paths for src="..."-->
+    <!--Style Guide: ALWAYS specify alt="..." & style="width:...px; height:...px;" > Preserves Space for Image and reduces Flickering-->
+    <!--Do NOT use Spaces around Equal Signs for better Readability-->
+    <map name="map">
+        <!--Reference name as usemap="#..." on img element-->
+        <area shape="rect" coords="" href="to which website?" alt="which object in image?" onclick="jsfunction()">
+        <!--Or shape Circle (3 coords - Center X/Y, Radius), Poly (As many as edges - X/Y), Default (whole area)-->
+    </map>
+
+    <p title="tooltip">Tooltip</p>
+    <h2>HR Tag (Fine Black Line)</h2>
+    <hr>
+    <p>BR <br> Tag (Line Break)</p>
+    <pre>
+            PRE Tag
+            
+            keeps the
+
+            format
+        </pre>
+    <p><b>Bold Text</b></p>
+    <p><i>Italic Text</i></p>
+    <p><sub>Subscript Text</sub> and <sup>Superscript Text</sup></p>
+    <p><strong>Strong Text</strong>/ <em>Emphasized Text</em>/ <mark>Marked Text</mark>/ <small>Small Text</small></p>
+    <p><del>Deleted Text</del>/ <ins>Inserted Text</ins></p>
+    <p>Here comes a Blockquote:</p>
+    <blockquote cite="https://www.random-website.com">
+        Blockquote here (indent)
+    </blockquote>
+    <p>Now a <q>quick Quote</q></p>
+    <p>This is an <abbr title="Abbreviation Element">AE</abbr></p>
+    <address>
+        This is made by Lukas Kodalle <br>
+        Gerwigstraße 3 <br>
+        Furtwangen 78120 <br>
+        Germany
+    </address>
+    <p><cite>The JS Journey</cite> is a Title Cite by Lukas</p>
+    <bdo dir="rtl">This Bi-Directional-Override text is written from Right to Left</bdo>
+    <p style="background-color: tomato;">I like tomato background</p>
+    <p style="color: SlateBlue;">SlateBlue is a cool color</p>
+    <a href="">
+        <img src="" alt="Image as Link">
+    </a><br>
+    <a href="mailto:lmkodalle@gmail.com" title="lmkodalle@gmail.com">Send an Email to me</a>
+    <!--title element for tooltip-->
+    <button onclick="document.location='...'">Button with Link</button>
+
+    <h2 id="bookmark">Bookmark</h2>
+    <p style="background-image: url(mypic.png); background-repeat: no-repeat;">Background Image</p>
+    <!--Will repeat automatically to fill element if not big enough and not further specified-->
+    <!--To make sure element is always covered/fixated: background-size: cover; background-attachment: fixed;-->
+    <picture>
+        <source media="(min-width: 100px)" srcset="img.png">
+        <source media="(min-width: 200px)" srcset="img.jpg">
+        <img src="img.default" alt="default below min-width">
+        <!--Always add img element for browser functionality-->
+        <!--Use without size definitions for Format Support of different image formats (browser uses first img format it can recognize)-->
+    </picture>
+
+    <h2 id="tables">Tables</h3>
+        <table id="horizontal">
+            <tr>
+                <!--Table Rows-->
+                <!--Table Headers-->
+                <th>HTML</th>
+                <th>CSS</th>
+                <th>JavaScript</th>
+            </tr>
+            <tr>
+                <!--Table Contents-->
+                <td>Content HTML</td>
+                <td>Content CSS</td>
+                <td>Content JavaScript</td>
+            </tr>
+        </table>
+        <table id="vertical">
+            <!--Sideways Table Headers-->
+            <tr>
+                <th>HTML</th>
+                <td>Content HTML</td>
+            </tr>
+            <tr>
+                <th>CSS</th>
+                <td>Content CSS</td>
+            </tr>
+            <tr>
+                <th>JavaScript</th>
+                <td>Content JavaScript</td>
+            </tr>
+        </table>
+        <table id="colspan">
+            <caption>This is a Caption of the Table</caption>
+            <!--Caption needs to stand directly after <table>-->
+            <tr>
+                <th colspan="3">Colspan of 3</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>CSS</td>
+                <td>JavaScript</td>
+            </tr>
+        </table>
+        <table id="rowspan">
+            <tr>
+                <th rowspan="2">Rowspan of 2</th>
+                <td>HTML</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+            </tr>
+            <tr>
+                <th>Normal</th>
+                <td>JavaScript</td>
+            </tr>
+        </table>
+        <table id="hovertable">
+            <tr>
+                <th>Hover Table</th>
+            </tr>
+            <tr>
+                <td>Here</td>
+            </tr>
+            <tr>
+                <td>Or Here</td>
+            </tr>
+        </table>
+        <table>
+            <caption>Table styled with Colgroup</caption>
+            <!--Colgroup needs to be after caption as a child of table-->
+            <!--Can style the amount of columns given in the <col span="x" style="...">-->
+            <colgroup>
+                <col span="1">
+                <!--Put empty <col> without style to leave out-->
+                <col span="2" style="background-color:lightgray">
+                <col span="1" style="background-color: darkgray;">
+            </colgroup>
+            <!--Very limited legal style uses: width- / visibility- / background- / border-properties (else no effect)-->
+            <tr>
+                <th>This Column is not styled</th>
+                <th>And this Column too</th>
+                <th>This is too</th>
+                <th>Another style</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </table>
+
+        <h2 id="lists">Lists</h2>
+        <!--<ul> element for Unordered List (items marked with black dots) and <ol> for Ordered List (items marked with numbers)-->
+        <!--Lists can also contain other HTML-Elements like Images, Links etc.-->
+        <ul style="list-style-type:disc">
+            <!--More possible styles are: circle / square / none / disc (default)-->
+            <li>Unordered item 1</li>
+            <li>Unordered item 2</li>
+            <li>Unordered item 3</li>
+        </ul>
+        <ol start="1" type="1">
+            <!--Use start="number" to start at a specific number-->
+            <!--Use type="..." to define the item marker: "1" (default) / "A/a" (upper-/lowercase letters) / "I/i" (upper-lowercase roman numbers)-->
+            <li>Ordered item 1</li>
+            <li>Ordered item 2</li>
+            <li>Ordered item 3</li>
+        </ol>
+        <!--<dl> element for Description List where <dt> stands for the term and <dd> defines it's meaning-->
+        <dl>
+            <dt>Item 1</dt>
+            <dd>- This is the dd element for Item 1</dd>
+            <dt>Item 2</dt>
+            <dd>- On top is the dt element 'Item 2'</dd>
+        </dl>
+        <ul>
+            <!--Nested Lists are possible. Use another <ul> / <ol> / <dl> element under the item that needs more underpoints as <li> elements-->
+            <li>Unnested Item 1</li>
+            <li>Item with more underpoints</li>
+            <ul>
+                <li>Nested Item 1</li>
+                <li>Nested Item 2</li>
+            </ul>
+            <li>Unnested Item 2</li>
+        </ul>
+
+        <h2 id="class">Block & Inline / Classes & Id</h2>
+        <div style="background-color: black; color: white;">
+            <p>Use div as container for other HTML elements like p.</p>
+            <p>Can't use Block-Level-Elements inside of Inline-Elements.</p>
+            <p>The P-Element defines a Paragraph and therefore is a Block-Level-Element.</p>
+            <p>The Span-Element is an Inline-Container and can be used inside of <span
+                    style="color:crimson">P-Elements</span>to mark up a part.</p>
+        </div>
+        <p>An Element can have more than one class, then it's just a space between like: class="style1 style2"</p>
+        <p>Id on Element can't start with a number nor have whitespaces. It's unique and can be used for bookmarks like
+            here: <a href="#bookmark">To Bookmark</a> (href="#bookmark")</p>
+        <h2 id="iframe">IFrame</h2>
+        <!--Use iframe to embed another document/website into the current website-->
+        <!--Good practice to add Title Element so Screen Reader can read out what's it about-->
+        <iframe src="stylesheet.css" title="IFrame CSS" frameborder="1" style="height:200px;width:500px;"></iframe>
+        <!--Instead of frameborder='1' (true), leave at '0' or delete and use style="border:1px solid black;"-->
+        <p>Or use IFrame Element as a Target for a Link: <a href="stylesheet.css" target="targetframe">Click for Target
+                IFrame</a></p>
+        <iframe src="My_JS_Learning/Source/notizen.ts" title="IFrame TS to CSS" frameborder="0"
+            style="border:3px solid black;" name="targetframe"></iframe>
+        <h2 id="layout">Layout & Responsive</h2>
+        <p>The Semantic Elements used to create a good HTML Layout:</p>
+        <ul>
+            <li>Header Element defines the header for the whole document or just a section</li>
+            <li>Nav Element defines a list of navigational links</li>
+            <li>Section Element defines a whole section in a document</li>
+            <li>Article Element defines an independent content</li>
+            <li>Aside Element defines content at the side of other content (sidebar)</li>
+            <li>Footer Element defines the bottom end of a document</li>
+            <li>Details Element defines additional content that can a user can open and close on demand</li>
+            <li>Summary Element defines the heading for the Details Element</li>
+        </ul>
+        <p>The Techniques for a good HTML Layout:</p>
+        <ol>
+            <li>CSS Framework</li>
+            <li>CSS Float</li>
+            <li>CSS Flexbox</li>
+            <li>CSS Grid</li>
+        </ol>
+
+        <h3>Responsive Images and Text</h3>
+        <img src="..." alt="Responsive Image" style="max-width:100%;height:auto;">
+        <!--Max-Width of 100% never goes past the original max. width-->
+        <!-- Different images for other viewport sizes use <picture> with <source srcset="..." media="(max-width: ...px)"> (described on top)-->
+        <p>Responsive Text Size can be set with "vw" unit (viewport width)</p>
+        <p>1vw is 1% of viewport width (50cm wide viewport = 1vw is 0.5cm)</p>
+        <p style="font-size: 2vw;"><strong>This Text is responsive to Viewport Width</strong></p>
+
+        <h3>Media Queries</h3>
+        <p>The Layout should also resize or change in major ways as soon as a breakpoint size is met (1200px)</p>
+        <div class="left">
+            <p>Left Block</p>
+        </div>
+        <div class="mid">
+            <p>Middle Block</p>
+        </div>
+        <div class="right">
+            <p>Right Block</p>
+        </div>
+
+        <h2 id="code">Computer Code</h3>
+            <p>Here is a Code Element to define User Input and Code Examples</p>
+            <!--<code> does not preserve whitespace & linebreaks > fix with <pre> element-->
+            <code>
+            x = 3
+            y = 2
+            z = x + y 
+        </code>
+            <p>With a Pre Element <i>(without deleting whitespace on the left side)</i>:</p>
+            <pre>
+            <code>
+                x = 3
+                y = 2
+                z = x + y
+            </code>
+        </pre>
+            <p>This is a KBD Element used to define User Keyboard Inputs:</p>
+            <p>Press <kbd>Ctrl + S</kbd> to Save the Document</p>
+            <p>The SAMP Element is used to define Sample Output from a Computer Program:</p>
+            <samp>File not found. <br> Press ESC to exit.</samp>
+            <p>The VAR Element is used to define Variables:</p>
+            <p>Person <var>A</var> has <var>X</var> amount of Apples. Person <var>B</var> has <var>Y</var> amount of
+                Pears.</p>
+
+            <h2 id="semantic">Semantic Elements</h2>
+            <p>Non Semantic Elements tell nothing about its content (i.e. div, span)</p>
+            <p>Semantic Elements on the other side clearly defines what the content is (i.e. form, table, article,
+                header, footer)</p>
+            <ol>
+                <li>Section Element:</li>
+                <ul>
+                    <li>Thematic Grouping of Content</li>
+                    <li>Usually starts with Heading</li>
+                    <li>Can be used for: Chapters / Introduction / News Items / Contact Information</li>
+                    <li>Web Page is normally split into Sections for Introduction, Content & Contact Information</li>
+                    <li>There can be Sections with Articles in them</li>
+                </ul>
+                <li>Article Element:</li>
+                <ul>
+                    <li>Specifies indepedent and self-contained Content</li>
+                    <li>Should make sense on its own (can be distributed without the rest of the website)</li>
+                    <li>Can be used for: Forum posts / Blog posts / User comments / Product Cards / Newspaper Articles
+                    </li>
+                    <li>There can be Articles with Sections in them</li>
+                </ul>
+                <li>Header Element</li>
+                <ul>
+                    <li>Represents a container for Introductory Content or Set of Navigational Links</li>
+                    <li>Typically contains: One or more Heading Elements (h1 - h6) / Logo or Icon / Authorship
+                        Information</li>
+                    <li>The Website can have multiple Header Elements</li>
+                    <li>Can't have Header Elements inside Header / Footer / Address Elements</li>
+                </ul>
+                <li>Footer Element</li>
+                <ul>
+                    <li>Defines the Footer for a Document or Section</li>
+                    <li>Typically contains: Authorship- / Copyright- / Contact- Information / Sitemap / Back to Top Link
+                        / Related Websites</li>
+                    <li>The Website can have more than just one Footer</li>
+                </ul>
+                <li>NAV Element</li>
+                <ul>
+                    <li>Defines a Set of Navigational Links</li>
+                    <li>Should only contain the Major Block of Navigational Links</li>
+                </ul>
+                <li>Aside Element</li>
+                <aside>This should float besides the Content</aside>
+                <ul>
+                    <li>Defines Content besides the Content it is placed (i.e. Sidebar)</li>
+                    <li>Should be directly related to the surrounding Content</li>
+                </ul>
+                <li>Figure & Figcaption Element</li>
+                <ul>
+                    <li>Figure Element specifies self-contained Content like Illustrations, Diagrams, Photos, Code
+                        Listings etc.</li>
+                    <li>Figcaption Element defines the Caption for Figure Element -> Can be placed as first or last
+                        Child</li>
+                    <li>IMG Element specifies the <strong>actual</strong> Image / Illustration</li>
+                </ul>
+                <li>Main Element</li>
+                <ul>
+                    <li>Specifies the Main Content of a Document</li>
+                    <li>The Content inside should be unique and not contain any repeated Content across the Page</li>
+                    <li>No Sidebars, Navigational Links, Copyright Information, Site Logos, Search Forms</li>
+                    <li>There must be only one Main Element and can <strong>not</strong> be a Descendant of Article,
+                        Aside, Footer, Header & Nav</li>
+                </ul>
+                <li>Time Element</li>
+                <ul>
+                    <li>Defines a specific Time or Datetime</li>
+                    <li>Can have the datetime="2022-02-22 22:22" Attribute</li>
+                    <li>Browsers can offer Date reminders through the User's Calendar and Search Engines produce smarter
+                        Results</li>
+                </ul>
+            </ol>
+            <figure>
+                <img src="..." alt="Figure > IMG">
+                <figcaption>This is a Figcaption + IMG Element inside a Figure Element </figcaption>
+            </figure>
+            <details>
+                <summary>This is a Summary Element inside a Details Element - Click it!</summary>
+                <p>The Details Element can contain additional Information like this (inside a P Element)</p>
+            </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <footer>
+                <p>Here comes the footer content</p>
+            </footer>
+</body>
+
+</html>
